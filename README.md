@@ -5,7 +5,9 @@ Moneyar is an app made to help people to manage their personal finance.
 
 Nothing is started yet. Even our todo isn't done. We are focusing on creating a MVP version on this.
 
-We will publish soon a complete roadmap (probably a Trello Board) where everyone will be able to comments and put thumbs-up to help us to prioritize the developpement.
+We are publishing a complete roadmap  everyone is able to comments and put thumbs-up to help us to prioritize the developpement.
+
+You can find it on Trello :  https://trello.com/b/m1Z94C0b/roadmap
 
 ## How to report a bug ?
 
