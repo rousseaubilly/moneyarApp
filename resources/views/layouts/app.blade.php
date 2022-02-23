@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html>
+<head>
+    <title>@yield('seo_title') - Moneyar</title>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+</head>
+<body>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<div class="w-64 bg-gray-800 h-full fixed top-0 bottom-0 left-0">
+    <div class="text-center pb-3 pt-3 mb-3 border-b border-gray-500">
+        <span class="text-2xl text-white font-bold text-center">moneyar</span>
+    </div>
+    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+        <i class="fa fa-dashboard mr-3"></i> Résumé
+    </a>
+    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+        <i class="fa fa-credit-card mr-3"></i> Mes comptes
+    </a>
+    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+        <i class="fa fa-chart-pie mr-3"></i> Mon budget
+    </a>
+    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+        <i class="fa fa-chart-line mr-3"></i> Projections
+    </a>
+    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+        <i class="fa fa-wrench mr-3"></i> Configuration
+    </a>
+</div>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+<main class="pl-64">
+    <div class="container mx-auto p-3">
+        @yield('content')
+    </div>
+</main>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+<script src="{{ mix('js/app.js') }}" ></script>
+<script src="https://kit.fontawesome.com/01e8611d8b.js" crossorigin="anonymous"></script>
+</body>
 </html>
