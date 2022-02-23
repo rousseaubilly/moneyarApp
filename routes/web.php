@@ -38,5 +38,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
    Route::get('/banks', [\App\Http\Controllers\Bank\ListingController::class, 'render'])->name('banks.list');
    Route::get('/banks/create', [\App\Http\Controllers\Bank\CreateController::class, 'render'])->name('banks.create');
    Route::post('/banks/create', [\App\Http\Controllers\Bank\CreateController::class, 'store']);
+   Route::get('/transactions_categories', [\App\Http\Controllers\TransactionCategory\ListingController::class, 'render'])->name('transactions_categories.list');
+   Route::get('/transactions_categories/create', [\App\Http\Controllers\TransactionCategory\CreateController::class, 'render'])->name('transactions_categories.create');
+   Route::post('/transactions_categories/create', [\App\Http\Controllers\TransactionCategory\CreateController::class, 'store']);
 
 });

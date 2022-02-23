@@ -1,0 +1,9 @@
+<option value="cyan">Cyan</option>
+<option value="red">Red</option>
+<option value="green">Green</option>
+<option value="blue">Blue</option>
+<option value="gray">Gray</option>
+<option value="yellow">Yellow</option>
+<option value="purple">Purple</option>
+<option value="orange">Orange</option>
+<option value="pink">Pink</option>
