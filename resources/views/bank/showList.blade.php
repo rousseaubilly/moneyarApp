@@ -16,7 +16,6 @@
             <th class="text-left py-2">Nom de la banque</th>
             <th class="text-center">Bic / Swift Code</th>
             <th class="text-center">Pays</th>
-            <th class="text-center"></th>
         </tr>
         </thead>
         <tbody>
@@ -25,9 +24,6 @@
                     <td class="py-2">{{ $bank->name }}</td>
                     <td class="text-center">{{ $bank->swift_code }}</td>
                     <td class="text-center">{{ $bank->country }}</td>
-                    <td>
-                        <a href="">Supprimer+</a>
-                    </td>
                 </tr>
             @endforeach
         </tbody>
