@@ -18,7 +18,6 @@ class CreateBankTable extends Migration
             $table->string('name');
             $table->string('country');
             $table->string('swift_code');
-            $table->string('logo_uri');
             $table->timestamps();
         });
     }
