@@ -26,11 +26,11 @@
         <div href="/settings/banks" class="px-4 py-3 m-3 rounded text-white  block bg-gray-600">
             <i class="fa fa-wrench mr-3"></i> Configuration
             <span class="block border-b border-gray-500 mb-3 pb-2 pt-2"></span>
-            <a href="/settings/banks" class="block text-gray-300 my-2 text-sm">Banques</a>
+            <a href="{{ route('banks.list') }}" class="block text-gray-300 my-2 text-sm">Banques</a>
             <a href="/settings/transactions_categories" class="block text-gray-300 my-2 text-sm">Catégories de transaction</a>
         </div>
     @else
-        <a href="/settings/banks" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">
+        <a href="{{ route('banks.list') }}" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">
             <i class="fa fa-wrench mr-3"></i> Configuration
         </a>
     @endif

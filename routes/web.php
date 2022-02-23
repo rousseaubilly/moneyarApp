@@ -35,6 +35,6 @@ require __DIR__.'/auth.php';
 Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
 
    // Settings Routes for Banks
-   Route::get('/banks', [\App\Http\Controllers\Bank\ListingController::class, 'render']);
+   Route::get('/banks', [\App\Http\Controllers\Bank\ListingController::class, 'render'])->name('banks.list');
 
 });
