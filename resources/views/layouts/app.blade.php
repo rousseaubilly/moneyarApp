@@ -18,7 +18,7 @@
         <div class="px-4 py-3 m-3 rounded text-white  block bg-gray-600">
             <i class="fa fa-credit-card mr-3"></i> Mes comptes
             <span class="block border-b border-gray-500 mb-3 pb-2 pt-2"></span>
-            <a href="{{ route('accounts.list') }}" class="block text-gray-300 my-2 text-sm">Tous mes comptes</a>
+            <a href="{{ route('accounts.list') }}" class="block text-gray-300 my-2 text-sm">Tous les comptes</a>
         </div>
     @else
         <a href="{{ route('accounts.list') }}" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">

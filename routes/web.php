@@ -49,5 +49,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
  */
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'accounts'], function(){
-    Route::get('/list', [])->name('accounts.list');
+    Route::get('/list', [\App\Http\Controllers\Account\ListingController::class, 'render'])->name('accounts.list');
+    Route::get('/create', [\App\Http\Controllers\Account\CreateController::class, 'render'])->name('accounts.create');
+    Route::post('/create', [\App\Http\Controllers\Account\CreateController::class, 'store']);
+
 });
