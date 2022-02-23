@@ -13,12 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Base Route
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
+
+/*
+ * Default Routes for Auth - laravel/breeze
+ */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+/*
+ * Routes who need authentification
+ */
+
+Route::group(['middleware' => ['auth']], function(){
+
+   // Settings Routes for Banks
+   Route::get('/settings/banks', [\App\Http\Controllers\Bank\ListingController::class, 'render']);
+
+});
