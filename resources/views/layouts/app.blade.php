@@ -10,21 +10,30 @@
     <div class="text-center pb-4 pt-4 mb-3 border-b border-gray-500">
         <span class="text-2xl text-white font-bold text-center">moneyar</span>
     </div>
-    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+    <a href="#" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">
         <i class="fa fa-dashboard mr-3"></i> Résumé
     </a>
-    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+    <a href="#" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">
         <i class="fa fa-credit-card mr-3"></i> Mes comptes
     </a>
-    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+    <a href="#" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">
         <i class="fa fa-chart-pie mr-3"></i> Mon budget
     </a>
-    <a href="#" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
+    <a href="#" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">
         <i class="fa fa-chart-line mr-3"></i> Projections
     </a>
-    <a href="/settings/banks" class="p-3 m-3 rounded text-white  block hover:bg-gray-600">
-        <i class="fa fa-wrench mr-3"></i> Configuration
-    </a>
+    @if(Route::current()->getPrefix() == "/settings")
+        <div href="/settings/banks" class="px-4 py-3 m-3 rounded text-white  block bg-gray-600">
+            <i class="fa fa-wrench mr-3"></i> Configuration
+            <span class="block border-b border-gray-500 mb-3 pb-2 pt-2"></span>
+            <a href="/settings/banks" class="block text-gray-300 my-2 text-sm">Banques</a>
+            <a href="/settings/transactions_categories" class="block text-gray-300 my-2 text-sm">Catégories de transaction</a>
+        </div>
+    @else
+        <a href="/settings/banks" class="px-4 py-3 m-3 rounded text-white  block hover:bg-gray-600">
+            <i class="fa fa-wrench mr-3"></i> Configuration
+        </a>
+    @endif
 </div>
 
 <main class="pl-64">

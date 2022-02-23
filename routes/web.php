@@ -32,9 +32,9 @@ require __DIR__.'/auth.php';
  * Routes who need authentification
  */
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
 
    // Settings Routes for Banks
-   Route::get('/settings/banks', [\App\Http\Controllers\Bank\ListingController::class, 'render']);
+   Route::get('/banks', [\App\Http\Controllers\Bank\ListingController::class, 'render']);
 
 });
