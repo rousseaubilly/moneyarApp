@@ -29,7 +29,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 /*
- * Routes who need authentification
+ * Settings Routes
  */
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
@@ -42,4 +42,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
    Route::get('/transactions_categories/create', [\App\Http\Controllers\TransactionCategory\CreateController::class, 'render'])->name('transactions_categories.create');
    Route::post('/transactions_categories/create', [\App\Http\Controllers\TransactionCategory\CreateController::class, 'store']);
 
+});
+
+/*
+ * Accounts Routes
+ */
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'accounts'], function(){
+    Route::get('/list', [])->name('accounts.list');
 });
