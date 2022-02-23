@@ -16,13 +16,15 @@
         <div class="p-4 border bg-gray-100 mb-3">
             <div class="grid grid-cols-3">
                 <div class="col-span-2">
-                    <span class="text-xl block font-bold">{{ $account->name }}</span>
-                    <span class="block">Banque : {{ $account->getBank->name }} - BIC : {{ $account->getBank->swift_code }} - IBAN/N° de compte : {{ $account->account_number }} </span>
-                    @if($account->description)
-                        <span class="text-gray-800 italic text-sm border-t border-gray-200 block mt-2 pt-2">
+                    <a href="{{ route('accounts.transactions.show', ['account_id' => $account->id]) }}">
+                        <span class="text-xl block font-bold">{{ $account->name }}</span>
+                        <span class="block">Banque : {{ $account->getBank->name }} - BIC : {{ $account->getBank->swift_code }} - IBAN/N° de compte : {{ $account->account_number }} </span>
+                        @if($account->description)
+                            <span class="text-gray-800 italic text-sm border-t border-gray-200 block mt-2 pt-2">
                             {{ $account->description }}
                         </span>
-                    @endif
+                        @endif
+                    </a>
                 </div>
                 <div class="text-right self-center">
                     <span class="text-xl font-bold">{{ $account->formattedBalance() }}</span>

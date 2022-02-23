@@ -49,8 +49,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
  */
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'accounts'], function(){
+    // Cash Accounts
     Route::get('/list', [\App\Http\Controllers\Account\ListingController::class, 'render'])->name('accounts.list');
     Route::get('/create', [\App\Http\Controllers\Account\CreateController::class, 'render'])->name('accounts.create');
     Route::post('/create', [\App\Http\Controllers\Account\CreateController::class, 'store']);
-
+    // Transactions linked to Cash Accounts
+    Route::get('/show/{account_id}', [\App\Http\Controllers\Account\Transaction\ShowController::class, 'render'])->name('accounts.transactions.show');
 });
