@@ -20,7 +20,12 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+
+        if(User::all()->count() < 1) {
+            return view('auth.register');
+        }else{
+            abort(403, 'The user account already been created.');
+        }
     }
 
     /**
@@ -33,6 +38,9 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
+        if(User::all()->count() < 1){
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -50,5 +58,9 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+
+        }else{
+            abort(403);
+        }
     }
 }
