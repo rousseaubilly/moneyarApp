@@ -36,5 +36,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'settings'], function(){
 
    // Settings Routes for Banks
    Route::get('/banks', [\App\Http\Controllers\Bank\ListingController::class, 'render'])->name('banks.list');
+   Route::get('/banks/create', [\App\Http\Controllers\Bank\CreateController::class, 'render'])->name('banks.create');
+   Route::post('/banks/create', [\App\Http\Controllers\Bank\CreateController::class, 'store']);
 
 });
