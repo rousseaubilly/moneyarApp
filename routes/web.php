@@ -55,4 +55,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'accounts'], function(){
     Route::post('/create', [\App\Http\Controllers\Account\CreateController::class, 'store']);
     // Transactions linked to Cash Accounts
     Route::get('/show/{account_id}', [\App\Http\Controllers\Account\Transaction\ShowController::class, 'render'])->name('accounts.transactions.show');
+    Route::get('/transactions/create', [\App\Http\Controllers\Account\Transaction\CreateController::class, 'render'])->name('accounts.transactions.create');
+    Route::post('/transactions/create', [\App\Http\Controllers\Account\Transaction\CreateController::class, 'store']);
 });

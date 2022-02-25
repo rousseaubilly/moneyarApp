@@ -14,8 +14,8 @@
 
     @foreach($cash_accounts as $account)
         <div class="p-4 border bg-gray-100 mb-3">
-            <div class="grid grid-cols-3">
-                <div class="col-span-2">
+            <div class="grid grid-cols-4">
+                <div class="col-span-3">
                     <a href="{{ route('accounts.transactions.show', ['account_id' => $account->id]) }}">
                         <span class="text-xl block font-bold">{{ $account->name }}</span>
                         <span class="block">Banque : {{ $account->getBank->name }} - BIC : {{ $account->getBank->swift_code }} - IBAN/N° de compte : {{ $account->account_number }} </span>

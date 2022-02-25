@@ -16,7 +16,7 @@ class ShowController extends Controller
     public function render(int $account_id){
 
         $account = CashAccount::findOrFail($account_id);
-        $transactions = Transaction::where('account_id', $account->id)->get();
+        $transactions = Transaction::where('account_id', $account->id)->orderBy('charged_at', 'DESC')->get();
 
         return view('accounts.transactions.show', [
             'account' => $account,

@@ -17,8 +17,8 @@ class CreateController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'account_number' => ['required', 'string'],
             'type' => ['required', 'string'],
-            'bank_id' => ['required', 'integer'],
-            'balance' => ['required', 'integer'],
+            'bank_id' => ['required', 'numeric'],
+            'balance' => ['required', 'numeric'],
             'currency' => ['required', 'string', 'max:3', 'min:3'],
         ]);
 

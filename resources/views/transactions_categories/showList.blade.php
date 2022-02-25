@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         <!-- Hack Purge Tailwind CSS -->
-        <span class="bg-orange-300 text-orange-500 bg-red-300 text-red-500 bg-green-300 text-green-500 bg-cyan-300 text-cyan-500 p-1 rounded hidden"></span>
+        <span class="bg-orange-300 text-orange-500 bg-blue-300 text-blue-500 bg-red-300 text-red-500 bg-green-300 text-green-500 bg-cyan-300 text-cyan-500 p-1 rounded hidden"></span>
 
             @foreach($transactions_categories as $category)
                 <tr class="border-b text-left">
